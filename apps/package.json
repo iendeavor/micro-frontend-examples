@@ -1,0 +1,11 @@
+{
+  "name": "module-federation-example",
+  "private": true,
+  "scripts": {
+    "dev": "cd react-app && pnpm run build && cd .. && cd vue-app && pnpm run build && cd .. && cd app && pnpm run dev",
+    "postinstall": "concurrently \"cd app && pnpm install\" \"cd react-app && pnpm install\" \"cd vue-app && pnpm install\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  }
+}
