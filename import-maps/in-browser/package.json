@@ -1,0 +1,6 @@
+{
+  "name": "import-maps-example",
+  "scripts": {
+    "dev": "node ../../scripts/http-server.js -d . -p 3000"
+  }
+}
