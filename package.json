@@ -2,6 +2,7 @@
   "name": "micro-frontend-examples",
   "private": true,
   "scripts": {
+    "clean": "rm -rf **/*/dist **/*/node_modules **/*/.pnpm-debug.log node_modules .pnpm-debug.log",
     "lint": "prettier --write ."
   },
   "devDependencies": {
