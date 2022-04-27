@@ -17,30 +17,6 @@ appStyle.textContent = `
 app.appendChild(appStyle);
 
 // ============================================================================
-// sub app (no-isolation)
-// ============================================================================
-const NoIsolationAppContent = (() => {
-  const NoIsolationAppContent = document.createElement("h1");
-  NoIsolationAppContent.textContent = "No-isolation app (this should be red)";
-  return NoIsolationAppContent;
-})();
-
-const NoIsolationAppScript = (() => {
-  const NoIsolationAppScript = document.createElement("script");
-  NoIsolationAppScript.textContent = `console.log('[no-isolation]', document);`;
-  return NoIsolationAppScript;
-})();
-
-const NoIsolationApp = (() => {
-  const NoIsolationApp = document.createElement("div");
-  NoIsolationApp.appendChild(NoIsolationAppContent);
-  NoIsolationApp.appendChild(NoIsolationAppScript);
-  return NoIsolationApp;
-})();
-
-app.appendChild(NoIsolationApp);
-
-// ============================================================================
 // sub app (shadow dom)
 // ============================================================================
 const shadowDomAppContent = (() => {
@@ -65,3 +41,7 @@ const shadowDomApp = (() => {
   return shadowDomApp;
 })();
 app.appendChild(shadowDomApp);
+
+// ============================================================================
+// sub app (css-module)
+// ============================================================================
