@@ -1,3 +1,4 @@
-import("common");
-
-export default "b";
+(async () => {
+  const common = (await import("common")).default;
+  console.log(common)
+})()

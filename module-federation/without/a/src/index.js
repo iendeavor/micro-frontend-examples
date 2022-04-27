@@ -1,6 +1,6 @@
-(async () => {
-  import("common");
+import('b');
 
-  const b = await import("b");
-  console.log(b.default);
-})();
+(async () => {
+  const common = (await import("common")).default;
+  console.log(common)
+})()

@@ -1,12 +1,11 @@
 {
-  "name": "with",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "module-federation-with-example",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "concurrently \"cd a && pnpm run build\" \"cd b && pnpm run build\" \"cd common && pnpm run build\"",
+    "postinstall": "concurrently \"cd a && pnpm install\" \"cd b && pnpm install\" \"cd common && pnpm install\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  }
 }

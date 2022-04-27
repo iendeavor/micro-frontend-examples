@@ -1,0 +1,8 @@
+{
+  "name": "module-federation-with-example",
+  "private": true,
+  "scripts": {
+    "build": "cd common && pnpm run build && cd .. && cd b && pnpm run build && cd .. && cd a && pnpm run build",
+    "postinstall": "cd common && pnpm install && cd .. && cd b && pnpm install && cd .. && cd a && pnpm install"
+  }
+}
