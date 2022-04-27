@@ -3,6 +3,10 @@ module.exports = {
     minimize: false,
   },
 
+  output: {
+    libraryTarget: "umd",
+  },
+
   plugins: [
     new (require("webpack").container.ModuleFederationPlugin)({
       name: "container_name_common",

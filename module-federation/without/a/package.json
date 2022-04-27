@@ -1,16 +1,13 @@
 {
   "name": "a",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && webpack --mode production"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "a": "link:../b"
+    "b": "link:../b",
+    "common": "link:../common"
   },
   "devDependencies": {
     "webpack": "^5.72.0",
