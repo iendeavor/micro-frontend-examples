@@ -18,7 +18,12 @@ Pros:
 - **Runtime** module resolution/loading (e.g., module-federation and importmaps)
   - Singleton dependencies (some library (e.g., styled-components) needs to be shared across all micro frontend apps)
 - Exposing lifecycle hooks (inspired by single-spa). Each micro frontend apps should be able to mount itself, thus we can use different tech stack for each micro frontend apps.
-- JS and CSS sandbox isolation
+- Isolation
+  - JS sandbox
+  - Prefixing
+    - CSS
+    - Local storage
+    - etc.
 - Use standard ways to communicate between micro frontend apps:
   - Passing attributes to share states (e.g., `<App token={token} />`)
   - Passing callback functions to handle events (e.g., `<App onTokenChange={onTokenChange} />`)
