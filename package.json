@@ -1,0 +1,12 @@
+{
+  "name": "micro-frontend-examples",
+  "private": true,
+  "scripts": {
+    "lint": "prettier --write ."
+  },
+  "devDependencies": {
+    "express": "^4.18.0",
+    "minimist": "^1.2.6",
+    "prettier": "^2.6.2"
+  }
+}
