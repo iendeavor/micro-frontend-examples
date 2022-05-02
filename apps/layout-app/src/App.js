@@ -54,7 +54,7 @@ const Layout = () => {
   }, [location.pathname]);
 
   return (
-    <div>
+    <div id="layout-app">
       <nav>
         <ul>
           <li>
@@ -73,14 +73,7 @@ const Layout = () => {
         </ul>
       </nav>
 
-      <div
-        style={{
-          margin: "10px",
-          padding: "10px",
-          textAlign: "center",
-          backgroundColor: "cyan",
-        }}
-      >
+      <div className="text-3xl text-brand">
         <h1>App ({location.pathname})</h1>
       </div>
 

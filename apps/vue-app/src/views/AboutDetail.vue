@@ -1,13 +1,5 @@
 <template>
-  <div
-    :style="{
-      margin: '10px',
-      padding: '10px',
-      textAlign: 'center',
-      backgroundColor: 'green',
-      color: 'white',
-    }"
-  >
+  <div class="text-3xl text-brand">
     <h1>About Detail ({{ $route.path }})</h1>
   </div>
 </template>

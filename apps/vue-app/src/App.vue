@@ -11,7 +11,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
+  <div id="vue-app">
     <nav>
       <ul>
         <li>

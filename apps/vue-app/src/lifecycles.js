@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import createRouterInstance from "./router";
+import "./index.css";
 
 import { foo } from "foo";
 foo();
