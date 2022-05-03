@@ -1,0 +1,25 @@
+{
+  "name": "@single-spa-example/vue-app",
+  "private": true,
+  "scripts": {
+    "dev": "dotenv -- webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "preview": "dotenv -- node ../../scripts/http-server.js --headers 'Access-Control-Allow-Origin: *'"
+  },
+  "dependencies": {
+    "foo": "link:../foo",
+    "single-spa-vue": "^2.5.1",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "dotenv-cli": "^5.1.0",
+    "systemjs-webpack-interop": "^2.3.7",
+    "vue-loader": "16.8.3",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "5.70.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "single-spa-example",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"cd app && pnpm run start\" \"cd layout-app && pnpm run start\" \"cd react-app && pnpm run start\" \"cd vue-app && pnpm run dev\" \"cd foo && pnpm run dev\"",
+    "build": "concurrently \"cd app && pnpm run build\" \"cd layout-app && pnpm run build\" \"cd react-app && pnpm run build\" \"cd vue-app && pnpm run build\" \"cd foo && pnpm run build\"",
+    "preview": "concurrently \"cd app && pnpm run preview\" \"cd layout-app && pnpm run preview\" \"cd react-app && pnpm run preview\" \"cd vue-app && pnpm run preview\" \"cd foo && pnpm run preview\"",
+    "postinstall": "concurrently \"cd app && pnpm install\" \"cd layout-app && pnpm install\" \"cd react-app && pnpm install\" \"cd vue-app && pnpm install\" \"cd foo && pnpm install\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  }
+}
