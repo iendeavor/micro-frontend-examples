@@ -1,0 +1,25 @@
+{
+  "name": "@qiankun-example/root-config",
+  "scripts": {
+    "dev": "dotenv -- webpack-dev-server --mode=development",
+    "build": "webpack --mode=production",
+    "preview": "dotenv -- node ../../scripts/http-server.js"
+  },
+  "dependencies": {
+    "qiankun": "^2.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/runtime": "^7.15.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^5.1.0",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}
