@@ -8,7 +8,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import { pathToRegexp } from "path-to-regexp";
-import { containerId } from "../../shared";
 import applications from "./applications";
 
 const App = ({ basename }) => {
@@ -84,7 +83,7 @@ const Layout = () => {
         <h1>App ({location.pathname})</h1>
       </div>
 
-      <div id={containerId}>
+      <div id="container">
         <Outlet />
       </div>
     </div>

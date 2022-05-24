@@ -2,7 +2,7 @@ const path = require("path");
 const slugify = require("slugify");
 const {
   convertDependenciesToShared,
-} = require("../shared/convert-dependencies-to-shared");
+} = require("./convert-dependencies-to-shared");
 const deps = require("./package.json").dependencies;
 
 /**

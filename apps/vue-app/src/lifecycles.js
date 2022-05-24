@@ -2,9 +2,6 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import createRouterInstance from "./router";
 
-import { foo } from "foo";
-foo();
-
 let instance = null;
 
 export const mount = ({ containerSelectors, basename }) => {

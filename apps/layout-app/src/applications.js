@@ -1,6 +1,4 @@
-import { containerId } from "../../shared";
-
-const containerSelectors = `#${containerId}`;
+const containerSelectors = `#container`;
 
 /**
  * @name applications
