@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     new (require("webpack").container.ModuleFederationPlugin)({
       remotes: {
-        layout_app: "layout_app@http://localhost:3001/remoteEntry.js",
+        layout_app: "layout_app@http://34.81.77.229:3001/remoteEntry.js",
       },
 
       shared: convertDependenciesToShared(deps),
