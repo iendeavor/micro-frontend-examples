@@ -10,7 +10,7 @@ import applications from "./applications";
 
   const applicationLifecycleList = await Promise.all(
     activeApplications.map((activeApplication) =>
-      activeApplication.loadLifecycles()
+      activeApplication.loadLifecycleHooks()
     )
   ).catch((error) => {
     console.log("something went wrong", error);

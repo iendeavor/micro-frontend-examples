@@ -9,7 +9,7 @@ const deps = require("./package.json").dependencies;
  * @type {import('webpack').Configuration}
  */
 module.exports = {
-  entry: "./src/lifecycles.js",
+  entry: "./src/lifecycle-hooks.js",
 
   plugins: [
     new (require("webpack").container.ModuleFederationPlugin)({
@@ -19,7 +19,7 @@ module.exports = {
 
       // For more info, see /layout-app/src/applications.js
       exposes: {
-        "./lifecycles": "./src/lifecycles.js",
+        "./lifecycle-hooks": "./src/lifecycle-hooks.js",
       },
 
       shared: convertDependenciesToShared(deps),

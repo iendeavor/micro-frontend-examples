@@ -29,7 +29,7 @@ const Layout = () => {
     let cancelled = false;
     let mounted = false;
     let application = null;
-    let applicationLifecycles = null;
+    let applicationLifecycleHooks = null;
 
     (async () => {
       application = applications.find((application) =>
@@ -37,10 +37,10 @@ const Layout = () => {
       );
       if (application === undefined) return;
 
-      applicationLifecycles = await application.loadLifecycles();
+      applicationLifecycleHooks = await application.loadLifecycleHooks();
       if (cancelled) return;
 
-      applicationLifecycles.mount(application.props);
+      applicationLifecycleHooks.mount(application.props);
       mounted = true;
     })();
 
@@ -48,7 +48,7 @@ const Layout = () => {
       cancelled = true;
       if (mounted === false) return;
 
-      applicationLifecycles.unmount(application.props);
+      applicationLifecycleHooks.unmount(application.props);
     };
   }, [location.pathname]);
 

@@ -4,7 +4,7 @@ const containerSelectors = "#app";
  * @name applications
  * @type {Array<{
  *   id: string
- *   loadLifecycles: () => Promise<{
+ *   loadLifecycleHooks: () => Promise<{
  *     mount: ({ containerSelectors, basename }) => void,
  *     unmount: ({ containerSelectors }) => void,
  *   }>,
@@ -18,7 +18,7 @@ const containerSelectors = "#app";
 const applications = [
   {
     id: "layout-app",
-    loadLifecycles: () => import("layout_app/lifecycles"),
+    loadLifecycleHooks: () => import("layout_app/lifecycle-hooks"),
     props: {
       containerSelectors,
       basename: "/",

@@ -4,7 +4,7 @@ const containerSelectors = `#container`;
  * @name applications
  * @type {Array<{
  *   id: string
- *   loadLifecycles: () => Promise<{
+ *   loadLifecycleHooks: () => Promise<{
  *     mount: ({ containerSelectors, basename }) => void,
  *     unmount: ({ containerSelectors }) => void,
  *   }>,
@@ -19,7 +19,7 @@ const containerSelectors = `#container`;
 const applications = [
   {
     id: "react-app",
-    loadLifecycles: () => import("react_app/lifecycles"),
+    loadLifecycleHooks: () => import("react_app/lifecycle-hooks"),
     linkChildren: "React App",
     props: {
       containerSelectors,
@@ -29,7 +29,7 @@ const applications = [
   },
   {
     id: "nested-react-app",
-    loadLifecycles: () => import("react_app/lifecycles"),
+    loadLifecycleHooks: () => import("react_app/lifecycle-hooks"),
     linkChildren: "Nested React App",
     props: {
       containerSelectors,
@@ -39,7 +39,7 @@ const applications = [
   },
   {
     id: "vue-app",
-    loadLifecycles: () => import("vue_app/lifecycles"),
+    loadLifecycleHooks: () => import("vue_app/lifecycle-hooks"),
     linkChildren: "Vue App",
     props: {
       containerSelectors,
@@ -49,7 +49,7 @@ const applications = [
   },
   {
     id: "nested-vue-app",
-    loadLifecycles: () => import("vue_app/lifecycles"),
+    loadLifecycleHooks: () => import("vue_app/lifecycle-hooks"),
     linkChildren: "Nested Vue App",
     props: {
       containerSelectors,
