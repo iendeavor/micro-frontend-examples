@@ -25,8 +25,8 @@ module.exports = {
       remotes: {
         // for more info about key, see /layout-app/src/application.js
         // for more info about value, see /(react|vue)-app/webpack.config.js
-        react_app: "react_app@http://34.81.77.229:3002/remoteEntry.js",
-        vue_app: "vue_app@http://34.81.77.229:3003/remoteEntry.js",
+        react_app: "react_app@http://localhost:3002/remoteEntry.js",
+        vue_app: "vue_app@http://localhost:3003/remoteEntry.js",
       },
 
       shared: convertDependenciesToShared(deps),
