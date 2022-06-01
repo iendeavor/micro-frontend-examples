@@ -1,23 +1,11 @@
 const path = require("path");
 const slugify = require("slugify");
-const {
-  convertDependenciesToShared,
-} = require("./convert-dependencies-to-shared");
-const deps = require("./package.json").dependencies;
 
 /**
  * @type {import('webpack').Configuration}
  */
 module.exports = {
   plugins: [
-    new (require("webpack").container.ModuleFederationPlugin)({
-      remotes: {
-        layout_app: "layout_app@http://localhost:3001/remoteEntry.js",
-      },
-
-      shared: convertDependenciesToShared(deps),
-    }),
-
     new (require("html-webpack-plugin"))({
       template: "./public/index.html",
     }),

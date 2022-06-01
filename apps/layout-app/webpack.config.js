@@ -1,9 +1,5 @@
 const path = require("path");
 const slugify = require("slugify");
-const {
-  convertDependenciesToShared,
-} = require("./convert-dependencies-to-shared");
-const deps = require("./package.json").dependencies;
 
 /**
  * @type {import('webpack').Configuration}
@@ -11,29 +7,7 @@ const deps = require("./package.json").dependencies;
 module.exports = {
   entry: "./src/lifecycle-hooks.js",
 
-  plugins: [
-    new (require("webpack").container.ModuleFederationPlugin)({
-      // For more info, see /app/webpack.config.js
-      name: "layout_app",
-      filename: "remoteEntry.js",
-
-      // For more info, see /app/src/applications.js
-      exposes: {
-        "./lifecycle-hooks": "./src/lifecycle-hooks.js",
-      },
-
-      remotes: {
-        // for more info about key, see /layout-app/src/application.js
-        // for more info about value, see /(react|vue)-app/webpack.config.js
-        react_app: "react_app@http://localhost:3002/remoteEntry.js",
-        vue_app: "vue_app@http://localhost:3003/remoteEntry.js",
-      },
-
-      shared: convertDependenciesToShared(deps),
-    }),
-
-    new (require("clean-webpack-plugin").CleanWebpackPlugin)(),
-  ],
+  plugins: [new (require("clean-webpack-plugin").CleanWebpackPlugin)()],
 
   output: {
     filename: "[name].[contenthash].js",

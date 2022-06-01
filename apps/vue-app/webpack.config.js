@@ -1,9 +1,5 @@
 const path = require("path");
 const slugify = require("slugify");
-const {
-  convertDependenciesToShared,
-} = require("./convert-dependencies-to-shared");
-const deps = require("./package.json").dependencies;
 
 /**
  * @type {import('webpack').Configuration}
@@ -12,19 +8,6 @@ module.exports = {
   entry: "./src/lifecycle-hooks.js",
 
   plugins: [
-    new (require("webpack").container.ModuleFederationPlugin)({
-      // For more info, see /app/webpack.config.js
-      name: "vue_app",
-      filename: "remoteEntry.js",
-
-      // For more info, see /layout-app/src/applications.js
-      exposes: {
-        "./lifecycle-hooks": "./src/lifecycle-hooks.js",
-      },
-
-      shared: convertDependenciesToShared(deps),
-    }),
-
     new (require("vue-loader").VueLoaderPlugin)(),
 
     new (require("clean-webpack-plugin").CleanWebpackPlugin)(),
