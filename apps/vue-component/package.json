@@ -1,5 +1,5 @@
 {
-  "name": "@apps/vue-app",
+  "name": "@apps/vue-component",
   "private": true,
   "module": "dist/main.js",
   "scripts": {
@@ -7,8 +7,7 @@
     "build": "cross-env NODE_ENV=production webpack"
   },
   "dependencies": {
-    "vue": "^3.2.33",
-    "vue-router": "^4.0.14"
+    "vue": "^3.2.33"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

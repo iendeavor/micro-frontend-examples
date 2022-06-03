@@ -8,6 +8,6 @@
       color: 'white',
     }"
   >
-    <h1>About ({{ $route.path }})</h1>
+    <h1>About</h1>
   </div>
 </template>

@@ -9,8 +9,7 @@ module.exports = {
   entry: "./src/lifecycle-hooks.js",
 
   externals: {
-    react: "react",
-    "react-dom": "react-dom",
+    vue: "vue",
   },
 
   output: {
@@ -21,17 +20,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
-        options: {
-          presets: ["@babel/preset-react"],
-        },
+        test: /\.vue$/,
+        loader: "vue-loader",
       },
     ],
   },
 
   plugins: [
+    new (require("vue-loader").VueLoaderPlugin)(),
+
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1,
     }),

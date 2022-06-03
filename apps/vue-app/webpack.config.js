@@ -1,45 +1,22 @@
-const path = require("path");
-const slugify = require("slugify");
+const webpack = require("webpack");
 
 /**
  * @type {import('webpack').Configuration}
  */
 module.exports = {
+  devtool: "source-map",
+
   entry: "./src/lifecycle-hooks.js",
 
-  plugins: [
-    new (require("vue-loader").VueLoaderPlugin)(),
-
-    new (require("clean-webpack-plugin").CleanWebpackPlugin)(),
-  ],
-
-  output: {
-    filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
+  externals: {
+    vue: "vue",
+    "vue-router": "vue-router",
   },
 
-  optimization:
-    process.env.NODE_ENV === "production"
-      ? {
-          minimize: true,
-          splitChunks: {
-            chunks: "all",
-            maxInitialRequests: Infinity,
-            minSize: 0,
-            cacheGroups: {
-              vendor: {
-                test: /[\\/]node_modules[\\/]\.pnpm[\\/]/,
-                name(module) {
-                  const packageName = module.context.match(
-                    /[\\/]node_modules[\\/]\.pnpm[\\/](.*?)([\\/]|$)/
-                  )[1];
-                  return packageName && slugify(packageName);
-                },
-              },
-            },
-          },
-        }
-      : {},
+  output: {
+    libraryTarget: "umd",
+    clean: true,
+  },
 
   module: {
     rules: [
@@ -50,7 +27,11 @@ module.exports = {
     ],
   },
 
-  devServer: {
-    port: process.env.PORT,
-  },
+  plugins: [
+    new (require("vue-loader").VueLoaderPlugin)(),
+
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1,
+    }),
+  ],
 };

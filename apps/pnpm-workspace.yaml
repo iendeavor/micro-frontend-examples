@@ -1,0 +1,6 @@
+packages:
+  - app
+  - layout-app
+  - react-app
+  - vue-app
+  - vue-component

@@ -1,13 +1,12 @@
 {
-  "name": "layout-app",
+  "name": "@apps/layout-app",
   "private": true,
+  "module": "dist/main.js",
   "scripts": {
-    "dev": "dotenv -- cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack",
-    "preview": "dotenv -- node ../../scripts/http-server.js"
+    "dev": "cross-env NODE_ENV=development webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "dependencies": {
-    "path-to-regexp": "^6.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^6.3.0"
@@ -15,13 +14,10 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-react": "^7.16.7",
+    "@headlessui/react": "^1.6.4",
     "babel-loader": "^8.2.5",
-    "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
-    "dotenv-cli": "^5.1.0",
-    "slugify": "^1.6.5",
     "webpack": "5.70.0",
-    "webpack-cli": "4.9.2",
-    "webpack-dev-server": "^4.8.1"
+    "webpack-cli": "4.9.2"
   }
 }

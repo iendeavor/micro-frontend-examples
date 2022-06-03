@@ -8,7 +8,7 @@ const createRouterInstance = ({ basename }) => {
     },
     {
       path: "/about",
-      component: () => import("./views/About.vue"),
+      component: () => import("./remotes/About.vue"),
     },
     {
       path: "/about/detail",

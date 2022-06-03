@@ -1,4 +1,3 @@
-
 # Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,15 +24,15 @@ spec:
   selector:
     app: mf
   ports:
-  - name: app
-    port: 80
-    targetPort: 3000
-  - name: layout-app
-    port: 3001
-    targetPort: 3001
-  - name: react-app
-    port: 3002
-    targetPort: 3002
-  - name: vue-app
-    port: 3003
-    targetPort: 3003
+    - name: app
+      port: 80
+      targetPort: 3000
+    - name: layout-app
+      port: 3001
+      targetPort: 3001
+    - name: react-app
+      port: 3002
+      targetPort: 3002
+    - name: vue-app
+      port: 3003
+      targetPort: 3003

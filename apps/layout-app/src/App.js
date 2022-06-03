@@ -7,8 +7,6 @@ import {
   Outlet,
   useLocation,
 } from "react-router-dom";
-import { pathToRegexp } from "path-to-regexp";
-import applications from "./applications";
 
 const App = ({ basename }) => {
   return (
@@ -22,33 +20,53 @@ const App = ({ basename }) => {
   );
 };
 
+const applications = [
+  {
+    id: "react-app",
+    basename: "/react",
+  },
+  {
+    id: "react-app",
+    basename: "/nested/react",
+  },
+  {
+    id: "vue-app",
+    basename: "/vue",
+  },
+  {
+    id: "vue-app",
+    basename: "/nested/vue",
+  },
+];
+
 const Layout = () => {
   const location = useLocation();
 
   useEffect(() => {
-    let cancelled = false;
-    let mounted = false;
-    let application = null;
-    let applicationLifecycleHooks = null;
-
+    let app = null;
+    let basename = null;
+    const containerSelectors = "#container";
     (async () => {
-      application = applications.find((application) =>
-        pathToRegexp(application.path).test(location.pathname)
+      const application = applications.find((application) =>
+        location.pathname.startsWith(application.basename)
       );
       if (application === undefined) return;
+      const id = application.id;
+      basename = application.basename;
+      app = await serviceLocator.resolve(id);
 
-      applicationLifecycleHooks = await application.loadLifecycleHooks();
-      if (cancelled) return;
-
-      applicationLifecycleHooks.mount(application.props);
-      mounted = true;
+      app.mount({
+        containerSelectors,
+        basename,
+      });
     })();
 
     return () => {
-      cancelled = true;
-      if (mounted === false) return;
-
-      applicationLifecycleHooks.unmount(application.props);
+      app?.unmount({
+        containerSelectors,
+        basename,
+      });
+      app = null;
     };
   }, [location.pathname]);
 
@@ -59,16 +77,18 @@ const Layout = () => {
           <li>
             <Link to="/">App</Link>
           </li>
-
-          {applications.map((application) => {
-            return (
-              <li key={application.id}>
-                <Link to={application.props.basename}>
-                  {application.linkChildren}
-                </Link>
-              </li>
-            );
-          })}
+          <li key="react">
+            <Link to="/react">React</Link>
+          </li>
+          <li key="nested-react">
+            <Link to="/nested/react">Nested React</Link>
+          </li>
+          <li key="vue">
+            <Link to="/vue">Vue</Link>
+          </li>
+          <li key="nested-vue">
+            <Link to="/nested/vue">Nested Vue</Link>
+          </li>
         </ul>
       </nav>
 
