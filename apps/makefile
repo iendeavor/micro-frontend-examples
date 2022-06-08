@@ -2,7 +2,7 @@ dev:
 	pnpm --recursive --parallel run dev
 
 build:
-	pnpm --recursive --filter *-uni run build
+	cd components-vue-3 && pnpm run build
 	pnpm --recursive --filter *-react run build
 	pnpm --recursive --filter *-vue run build
 	cd react-app && pnpm run build

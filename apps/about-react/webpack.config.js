@@ -6,7 +6,7 @@ const webpack = require("webpack");
 module.exports = {
   devtool: "source-map",
 
-  entry: "./src/App.js",
+  entry: "./src/App.g.js",
 
   externals: {
     react: "react",

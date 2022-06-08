@@ -7,6 +7,7 @@
     "build": "cross-env NODE_ENV=production webpack"
   },
   "dependencies": {
+    "rxjs": "^7.5.5",
     "vue": "^3.2.33"
   },
   "devDependencies": {

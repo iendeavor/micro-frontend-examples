@@ -6,7 +6,7 @@ const webpack = require("webpack");
 module.exports = {
   devtool: "source-map",
 
-  entry: "./src/App.vue",
+  entry: "./src/App.g.vue",
 
   externals: {
     vue: "vue",

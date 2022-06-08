@@ -6,15 +6,15 @@ const webpack = require("webpack");
 module.exports = {
   devtool: "source-map",
 
-  entry: "./src/lifecycle-hooks.js",
+  entry: "./src/about-component-lifecycle-hooks.g.js",
 
   externals: {
     vue: "vue",
   },
 
   output: {
+    filename: "about-component-lifecycle-hooks.js",
     libraryTarget: "umd",
-    clean: true,
   },
 
   module: {

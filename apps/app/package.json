@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@apps/about-react": "workspace:*",
-    "@apps/about-uni": "workspace:*",
     "@apps/about-vue": "workspace:*",
+    "@apps/components-vue-3": "workspace:*",
     "@apps/layout-app": "workspace:*",
     "@apps/react-app": "workspace:*",
     "@apps/vue-app": "workspace:*"

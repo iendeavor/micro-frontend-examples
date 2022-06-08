@@ -14,12 +14,14 @@ importers:
       react: ^16.13.0
       react-dom: ^16.13.0
       react-router-dom: ^6.3.0
+      rxjs: ^7.5.5
       webpack: 5.70.0
       webpack-cli: 4.9.2
     dependencies:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       react-router-dom: 6.3.0_wcqkhtmu7mswc6yz4uyexck3ty
+      rxjs: 7.5.5
     devDependencies:
       '@babel/core': 7.18.2
       '@babel/preset-react': 7.17.12_@babel+core@7.18.2
@@ -28,32 +30,17 @@ importers:
       webpack: 5.70.0_webpack-cli@4.9.2
       webpack-cli: 4.9.2_webpack@5.70.0
 
-  about-uni:
-    specifiers:
-      cross-env: ^7.0.3
-      vue: ^3.2.33
-      vue-loader: 16.8.3
-      vue-template-compiler: ^2.6.14
-      webpack: 5.70.0
-      webpack-cli: 4.9.2
-    dependencies:
-      vue: 3.2.36
-    devDependencies:
-      cross-env: 7.0.3
-      vue-loader: 16.8.3_vue@3.2.36+webpack@5.70.0
-      vue-template-compiler: 2.6.14
-      webpack: 5.70.0_webpack-cli@4.9.2
-      webpack-cli: 4.9.2_webpack@5.70.0
-
   about-vue:
     specifiers:
       cross-env: ^7.0.3
+      rxjs: ^7.5.5
       vue: ^3.2.33
       vue-loader: 16.8.3
       vue-template-compiler: ^2.6.14
       webpack: 5.70.0
       webpack-cli: 4.9.2
     dependencies:
+      rxjs: 7.5.5
       vue: 3.2.36
     devDependencies:
       cross-env: 7.0.3
@@ -65,8 +52,8 @@ importers:
   app:
     specifiers:
       '@apps/about-react': workspace:*
-      '@apps/about-uni': workspace:*
       '@apps/about-vue': workspace:*
+      '@apps/components-vue-3': workspace:*
       '@apps/layout-app': workspace:*
       '@apps/react-app': workspace:*
       '@apps/vue-app': workspace:*
@@ -78,8 +65,8 @@ importers:
       webpack-dev-server: ^4.8.1
     dependencies:
       '@apps/about-react': link:../about-react
-      '@apps/about-uni': link:../about-uni
       '@apps/about-vue': link:../about-vue
+      '@apps/components-vue-3': link:../components-vue-3
       '@apps/layout-app': link:../layout-app
       '@apps/react-app': link:../react-app
       '@apps/vue-app': link:../vue-app
@@ -90,6 +77,27 @@ importers:
       webpack: 5.70.0_webpack-cli@4.9.2
       webpack-cli: 4.9.2_w7ngjslluxdfvxkhxvq3kyboee
       webpack-dev-server: 4.9.1_spmstbzrmxjdafr7ccogoqrx6e
+
+  components-vue-3:
+    specifiers:
+      cross-env: ^7.0.3
+      rimraf: ^3.0.2
+      rxjs: ^7.5.5
+      vue: ^3.2.33
+      vue-loader: 16.8.3
+      vue-template-compiler: ^2.6.14
+      webpack: 5.70.0
+      webpack-cli: 4.9.2
+    dependencies:
+      rxjs: 7.5.5
+      vue: 3.2.36
+    devDependencies:
+      cross-env: 7.0.3
+      rimraf: 3.0.2
+      vue-loader: 16.8.3_vue@3.2.36+webpack@5.70.0
+      vue-template-compiler: 2.6.14
+      webpack: 5.70.0_webpack-cli@4.9.2
+      webpack-cli: 4.9.2_webpack@5.70.0
 
   layout-app:
     specifiers:
@@ -2569,6 +2577,12 @@ packages:
       glob: 7.2.3
     dev: true
 
+  /rxjs/7.5.5:
+    resolution: {integrity: sha512-sy+H0pQofO95VDmFLzyaw9xNJU4KTRSwQIGM6+iG3SypAtCiLDzpeG8sJrNCWn2Up9km+KhkvTdbkrdy+yzZdw==}
+    dependencies:
+      tslib: 2.4.0
+    dev: false
+
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: true
@@ -2901,7 +2915,6 @@ packages:
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-    dev: true
 
   /type-is/1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}

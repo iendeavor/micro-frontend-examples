@@ -1,32 +1,29 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Link, Routes, Route, Outlet } from "react-router-dom";
 
+const HomeLazy = lazy(() => import("./views/Home"));
 const Home = () => {
-  const Home = lazy(() => import("./views/Home"));
-
   return (
     <Suspense fallback={<div>loading...</div>}>
-      <Home />
+      <HomeLazy />
     </Suspense>
   );
 };
 
+const AboutLazy = lazy(() => import("./views/About"));
 const About = () => {
-  const About = lazy(() => window.serviceLocator.resolve("about-react"));
-
   return (
     <Suspense fallback={<div>loading...</div>}>
-      <About />
+      <AboutLazy />
     </Suspense>
   );
 };
 
+const AboutDetailLazy = lazy(() => import("./views/AboutDetail"));
 const AboutDetail = () => {
-  const AboutDetail = lazy(() => import("./views/AboutDetail"));
-
   return (
     <Suspense fallback={<div>loading...</div>}>
-      <AboutDetail />
+      <AboutDetailLazy />
     </Suspense>
   );
 };
