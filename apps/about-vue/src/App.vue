@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
-const appPromise = serviceLocator.resolve("vue-component");
+const appPromise = window.serviceLocator.resolve("about-uni");
 const about = ref();
 let isMounting = false;
 onMounted(async () => {

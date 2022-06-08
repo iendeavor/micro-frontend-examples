@@ -1,5 +1,5 @@
 {
-  "name": "@apps/vue-component",
+  "name": "@apps/about-vue",
   "private": true,
   "module": "dist/main.js",
   "scripts": {

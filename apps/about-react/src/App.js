@@ -5,7 +5,7 @@ const About = () => {
     let app = null;
     const containerSelectors = "#about";
     (async () => {
-      app = await serviceLocator.resolve("vue-component");
+      app = await window.serviceLocator.resolve("about-uni");
 
       app.mount({
         containerSelectors,

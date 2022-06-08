@@ -53,7 +53,7 @@ const Layout = () => {
       if (application === undefined) return;
       const id = application.id;
       basename = application.basename;
-      app = await serviceLocator.resolve(id);
+      app = await window.serviceLocator.resolve(id);
 
       app.mount({
         containerSelectors,

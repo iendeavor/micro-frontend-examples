@@ -8,7 +8,7 @@ const createRouterInstance = ({ basename }) => {
     },
     {
       path: "/about",
-      component: () => import("./remotes/About.vue"),
+      component: () => window.serviceLocator.resolve("about-vue"),
     },
     {
       path: "/about/detail",

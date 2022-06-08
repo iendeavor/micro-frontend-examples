@@ -3,4 +3,6 @@ packages:
   - layout-app
   - react-app
   - vue-app
-  - vue-component
+  - about-uni
+  - about-vue
+  - about-react

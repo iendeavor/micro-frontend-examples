@@ -12,7 +12,7 @@ const Home = () => {
 };
 
 const About = () => {
-  const About = lazy(() => import("./remotes/About"));
+  const About = lazy(() => window.serviceLocator.resolve("about-react"));
 
   return (
     <Suspense fallback={<div>loading...</div>}>

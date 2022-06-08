@@ -12,6 +12,8 @@ const serviceLocator = {
 serviceLocator.register("layout-app", () => import("@apps/layout-app"));
 serviceLocator.register("react-app", () => import("@apps/react-app"));
 serviceLocator.register("vue-app", () => import("@apps/vue-app"));
-serviceLocator.register("vue-component", () => import("@apps/vue-component"));
+serviceLocator.register("about-uni", () => import("@apps/about-uni"));
+serviceLocator.register("about-vue", () => import("@apps/about-vue"));
+serviceLocator.register("about-react", () => import("@apps/about-react"));
 
 window.serviceLocator = serviceLocator;
