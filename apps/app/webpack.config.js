@@ -8,6 +8,15 @@ module.exports = {
     clean: true,
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: "babel-loader",
+      },
+    ],
+  },
+
   plugins: [
     new (require("html-webpack-plugin"))({
       template: "./public/index.html",

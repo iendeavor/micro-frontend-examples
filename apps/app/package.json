@@ -7,6 +7,9 @@
     "preview": "dotenv -- node ../../scripts/http-server.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5",
     "cross-env": "^7.0.3",
     "dotenv-cli": "^5.1.0",
     "html-webpack-plugin": "^5.5.0",
@@ -20,6 +23,7 @@
     "@apps/components-vue-3": "workspace:*",
     "@apps/layout-app": "workspace:*",
     "@apps/react-app": "workspace:*",
-    "@apps/vue-app": "workspace:*"
+    "@apps/vue-app": "workspace:*",
+    "vue": "^3.2.33"
   }
 }

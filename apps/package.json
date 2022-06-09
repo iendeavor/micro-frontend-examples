@@ -1,4 +1,7 @@
 {
   "name": "module-federation-example",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "core-js": "^3.22.8"
+  }
 }
